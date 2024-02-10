@@ -8,9 +8,36 @@ import Missing from "./components/Missing"
 import Footer from "./components/Footer"
 import { Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
+import {v4 as uuidv4} from 'uuid'
 
 function App() {
     const [searchText, setSearchText] = useState("")
+    const [posts, setPosts] = useState([
+      {
+          id: uuidv4(),
+          title: "Oh Bread of Heaven",
+          body: "God gives me life, God lives in me, He feeds my soul, he guides my ways, He, God gives me life, God lives in me, He feeds my soul, he guides my ways, He, God gives me life, God lives in me, He feeds my soul, he guides my ways, He",
+          date: "2024-01-31"
+      },
+      {
+          id: uuidv4(),
+          title: "How can I repay the Lord for His goodness to me",
+          body: "How can I repay the Lord for His goodness to me, How can I repay the Lord for His goodness to me, How can I repay the Lord for His goodness to me, How can I repay the Lord for His goodness to me, How can I repay the Lord for His goodness to me, How can I repay the Lord for His goodness to me",
+          date: "2024-02-10"
+      },
+      {
+          id: uuidv4(),
+          title: "God of mercy and compassion",
+          body: "God of mercy and compassion you looked with love towards me, Father thank you for being my Father,God of mercy and compassion you looked with love towards me, Father thank you for being my Father, God of mercy and compassion you looked with love towards me, Father thank you for being my Father",
+          date: "2024-02-11"
+      },
+      {
+          id: uuidv4(),
+          title: "Lorem ipsum Dolor Sit Amet Consectetur",
+          body: "Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. Voluptatibus Optio, A Numquam Esse Ipsum Iure. Modi Autem Blanditiis Nulla Voluptate Nostrum Temporibus, Amet, Non Quas Consequuntur Eum Tempore Totam Sequi. Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Neque, Vero Repellendus! Accusantium Doloremque Placeat Eaque Eligendi Quaerat? Cupiditate, Quae Corrupti?",
+          date: "2024-02-11"
+      }
+    ])
 
     return (
         <div className="App">
@@ -22,7 +49,7 @@ function App() {
             />
             <main>
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Home posts={posts} />} />
                     <Route path="/posts/new" element={<NewPost />} />
                     <Route path="/posts/:id" element={<Post />} />
                     <Route path="/about" element={<About />} />

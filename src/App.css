@@ -20,11 +20,21 @@ header {
 }
 
 ul{
+   list-style: none;
+   text-align: left;
+}
+
+ul li a{
+   color: #282c34;
+   text-decoration: none;
+}
+
+header ul{
     list-style: none;
     display: flex;
 }
 
-ul li{
+header ul li{
     display: inline-block;
     margin-right: 10px; /* add spacing between items */
 }
