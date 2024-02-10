@@ -15,13 +15,15 @@ function App() {
         className="header" 
         title={"The Simple Blog"}
       />
-      <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/posts/new" element={<NewPost />} />
-          <Route path="/posts/:id" element={<Post />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/*" element={<Missing />} />
-      </Routes>
+      <main>
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/posts/new" element={<NewPost />} />
+              <Route path="/posts/:id" element={<Post />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/*" element={<Missing />} />
+          </Routes>
+      </main>
       <Footer />
     </div>
   );
