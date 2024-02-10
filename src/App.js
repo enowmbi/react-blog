@@ -12,6 +12,8 @@ import {v4 as uuidv4} from 'uuid'
 
 function App() {
     const [searchText, setSearchText] = useState("")
+    const [postTitle, setPostTitle] = useState("")
+    const [postBody, setPostBody] = useState("")
     const [posts, setPosts] = useState([
       {
           id: uuidv4(),
@@ -47,6 +49,14 @@ function App() {
         navigate("/")
     }
 
+    const handleSubmitPost = (e) => {
+        e.preventDefault()
+        const newPost = {id: uuidv4(), title: postTitle, body: postBody, date: "2024-02-11"}
+        const allPosts = [...posts, newPost]
+        setPosts(allPosts)
+        navigate("/")
+    }
+
     return (
         <div className="App">
             <Header
@@ -58,7 +68,17 @@ function App() {
             <main>
                 <Routes>
                     <Route path="/" element={<Home posts={posts} />} />
-                    <Route path="/posts/new" element={<NewPost />} />
+                    <Route
+                        path="/posts/new" 
+                        element={
+                            <NewPost  
+                                postTitle={postTitle}
+                                setPostTitle={setPostTitle} 
+                                setBody={postBody}
+                                setPostBody={setPostBody}
+                                handleSubmitPost={handleSubmitPost}
+                            />}
+                    />
                     <Route path="/posts/:id" element={<PostDetails posts={posts} handleDeletePost={handleDeletePost}/>} />
                     <Route path="/about" element={<About />} />
                     <Route path="/*" element={<Missing />} />
