@@ -1,8 +1,14 @@
-const SearchBox = () =>{
+const SearchBox = ({ searchText, setSearchText }) =>{
     return(
-        <div>
-            <input type="search" placeholder="Search posts"/>
-        </div>
+        <form onSubmit={(e) => e.preventDefault()}>
+            <input
+              id="search"
+              type="text" 
+              placeholder="Search posts" 
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+            />
+        </form>
 
     )
 }

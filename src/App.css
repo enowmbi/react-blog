@@ -38,9 +38,9 @@ nav ul li a:hover{
     text-decoration: underline;
 }
 
-div input{
+#search{
     width: 100vh;
-    height: 5vh;
+    height: 4vh;
     font-size: 20px;
 }
 
