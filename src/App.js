@@ -3,7 +3,7 @@ import Header from "./components/Header"
 import Home from "./components/Home"
 import About from "./components/About"
 import NewPost from "./components/NewPost"
-import Post from "./components/Post"
+import PostDetails from "./components/PostDetails"
 import Missing from "./components/Missing"
 import Footer from "./components/Footer"
 import { Routes, Route } from 'react-router-dom'
@@ -51,7 +51,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home posts={posts} />} />
                     <Route path="/posts/new" element={<NewPost />} />
-                    <Route path="/posts/:id" element={<Post />} />
+                    <Route path="/posts/:id" element={<PostDetails posts={posts}/>} />
                     <Route path="/about" element={<About />} />
                     <Route path="/*" element={<Missing />} />
                 </Routes>
