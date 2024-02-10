@@ -1,6 +1,5 @@
 import './App.css';
 import Header from "./components/Header"
-import Nav from "./components/Nav"
 import Home from "./components/Home"
 import About from "./components/About"
 import NewPost from "./components/NewPost"
@@ -12,8 +11,10 @@ import { Routes, Route } from 'react-router-dom'
 function App() {
   return (
     <div className="App">
-      <Header title={"The Simple Blog"}/>
-      <Nav />
+      <Header
+        className="header" 
+        title={"The Simple Blog"}
+      />
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/posts/new" element={<NewPost />} />

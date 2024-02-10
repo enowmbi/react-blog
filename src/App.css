@@ -13,15 +13,40 @@
   }
 }
 
-.App-header {
+header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+ul li{
+    display: inline-block;
+    margin-right: 10px; /* add spacing between items */
+}
+
+nav ul li a{
+   color: white;
+   text-decoration: none;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+div input{
+    width: 200vh;
+    height: 10vh;
+    font-size: 20px;
 }
 
 .App-link {
