@@ -6,7 +6,7 @@ import NewPost from "./components/NewPost"
 import PostDetails from "./components/PostDetails"
 import Missing from "./components/Missing"
 import Footer from "./components/Footer"
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import {v4 as uuidv4} from 'uuid'
 
@@ -39,6 +39,14 @@ function App() {
       }
     ])
 
+    const navigate = useNavigate()
+
+    const handleDeletePost = (id) => {
+        const filteredPosts = posts.filter((post) => post.id !== id)
+        setPosts(filteredPosts)
+        navigate("/")
+    }
+
     return (
         <div className="App">
             <Header
@@ -51,7 +59,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home posts={posts} />} />
                     <Route path="/posts/new" element={<NewPost />} />
-                    <Route path="/posts/:id" element={<PostDetails posts={posts}/>} />
+                    <Route path="/posts/:id" element={<PostDetails posts={posts} handleDeletePost={handleDeletePost}/>} />
                     <Route path="/about" element={<About />} />
                     <Route path="/*" element={<Missing />} />
                 </Routes>
