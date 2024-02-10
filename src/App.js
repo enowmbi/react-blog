@@ -54,6 +54,8 @@ function App() {
         const newPost = {id: uuidv4(), title: postTitle, body: postBody, date: "2024-02-11"}
         const allPosts = [...posts, newPost]
         setPosts(allPosts)
+        setPostTitle("")
+        setPostBody("")
         navigate("/")
     }
 
