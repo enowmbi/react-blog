@@ -4,6 +4,7 @@ const Home = ({ posts }) =>{
     return(
         <main>
             <h2> Home </h2>
+            <hr id="divider"/>
         <ul>
          { posts.map((post) => {
              return(

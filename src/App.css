@@ -43,6 +43,14 @@ main article{
     padding-inline-start: 40px;
 }
 
+#divider{
+  width: 30%;
+}
+
+#about{
+   margin-top: 40px;
+}
+
 header ul li{
     display: inline-block;
     margin-right: 10px; /* add spacing between items */

@@ -1,8 +1,10 @@
 const About =()=>{
     return(
-            <section>
+            <main>
                 <h2>About</h2>
-            </section>
+                <hr id="divider"/>
+                <p id="about">This blog app is a project in my journey to learn React</p>
+            </main>
     )
 
 }
