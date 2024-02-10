@@ -1,8 +1,20 @@
+import { Link } from 'react-router-dom'
+
 const Nav = ()=>{
     return(
-        <main>
-            <h2>Nav</h2>
-        </main>
+        <nav>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/posts/new">New Post</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
+            </ul>
+        </nav>
     )
 }
 
