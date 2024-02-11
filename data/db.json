@@ -1,0 +1,28 @@
+{
+    "posts": [
+        {
+            "id": "1",
+            "title": "Oh Bread of Heaven",
+            "body": "God gives me life, God lives in me, He feeds my soul, he guides my ways he guides my ways, He",
+            "date": "2024-01-26"
+        },
+        {
+            "id": "2",
+            "title": "How can I repay the Lord for His goodness to me",
+            "body": "How can I repay the Lord for His goodness to me, How can I repay the Lord for His goodness to me",
+            "date": "2024-01-31"
+        },
+        {
+            "id": "3",
+            "title": "God of mercy and compassion",
+            "body": "God of mercy and compassion you looked with love towards me, Father thank you for being my Father",
+            "date": "2024-02-08"
+        },
+        {
+            "id": "4",
+            "title": "Lorem ipsum Dolor Sit Amet Consectetur",
+            "body": "Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. Voluptatibus Optio, A Numquam Esse Ipsum Iure",
+            "date": "2024-02-11"
+        }
+    ]
+}
