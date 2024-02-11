@@ -9,40 +9,36 @@ import Footer from "./components/Footer"
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import {v4 as uuidv4} from 'uuid'
+import api from "./api/posts"
 
 function App() {
     const [searchText, setSearchText] = useState("")
     const [searchResults, setSearchResults] = useState([])
     const [postTitle, setPostTitle] = useState("")
     const [postBody, setPostBody] = useState("")
-    const [posts, setPosts] = useState([
-      {
-          id: uuidv4(),
-          title: "Oh Bread of Heaven",
-          body: "God gives me life, God lives in me, He feeds my soul, he guides my ways, He, God gives me life, God lives in me, He feeds my soul, he guides my ways, He, God gives me life, God lives in me, He feeds my soul, he guides my ways, He",
-          date: "2024-01-26"
-      },
-      {
-          id: uuidv4(),
-          title: "How can I repay the Lord for His goodness to me",
-          body: "How can I repay the Lord for His goodness to me, How can I repay the Lord for His goodness to me, How can I repay the Lord for His goodness to me, How can I repay the Lord for His goodness to me, How can I repay the Lord for His goodness to me, How can I repay the Lord for His goodness to me",
-          date: "2024-01-31"
-      },
-      {
-          id: uuidv4(),
-          title: "God of mercy and compassion",
-          body: "God of mercy and compassion you looked with love towards me, Father thank you for being my Father,God of mercy and compassion you looked with love towards me, Father thank you for being my Father, God of mercy and compassion you looked with love towards me, Father thank you for being my Father",
-          date: "2024-02-08"
-      },
-      {
-          id: uuidv4(),
-          title: "Lorem ipsum Dolor Sit Amet Consectetur",
-          body: "Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. Voluptatibus Optio, A Numquam Esse Ipsum Iure. Modi Autem Blanditiis Nulla Voluptate Nostrum Temporibus, Amet, Non Quas Consequuntur Eum Tempore Totam Sequi. Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Neque, Vero Repellendus! Accusantium Doloremque Placeat Eaque Eligendi Quaerat? Cupiditate, Quae Corrupti?",
-          date: "2024-02-11"
-      }
-    ])
+    const [posts, setPosts] = useState([])
 
     const navigate = useNavigate()
+
+    useEffect(() =>{
+        const fetchPosts = async () =>{
+            try{
+                const response = await api.get('/posts')
+                setPosts(response.data)
+            }catch(err){
+                if(err.response){
+                    // response not in 200 range but we got a response
+                    console.log(err.response.data)
+
+                }else{
+                    console.log(err.message)
+                }
+            }
+        } 
+
+        fetchPosts()
+
+    }, [])
 
     useEffect(() => {
         const filteredResult = posts.filter((post) => post.title.toLowerCase().includes(searchText.toLowerCase())
@@ -50,20 +46,34 @@ function App() {
         setSearchResults(filteredResult.reverse())
     }, [posts, searchText])
 
-    const handleDeletePost = (id) => {
-        const filteredPosts = posts.filter((post) => post.id !== id)
-        setPosts(filteredPosts)
-        navigate("/")
+    const handleDeletePost = async (id) => {
+        try{
+            await api.delete(`/posts/${id}`) 
+            const filteredPosts = posts.filter((post) => post.id !== id)
+            setPosts(filteredPosts)
+            navigate("/")
+        }catch(err){
+            console.log(err)
+        }
     }
 
-    const handleSubmitPost = (e) => {
+    const handleSubmitPost = async (e) => {
         e.preventDefault()
         const newPost = {id: uuidv4(), title: postTitle, body: postBody, date: "2024-02-11"}
-        const allPosts = [...posts, newPost]
-        setPosts(allPosts)
-        setPostTitle("")
-        setPostBody("")
-        navigate("/")
+        try{
+            const response = await api.post('/posts', newPost)
+            const allPosts = [...posts, response.data] //use the response from the api -- api set's id etc
+            setPosts(allPosts)
+            setPostTitle("")
+            setPostBody("")
+            navigate("/")
+        }catch(err){
+            if(err.response){
+                console.log(err.response.data)
+            }else{
+                console.log(err)
+            }
+        }
     }
 
     return (
