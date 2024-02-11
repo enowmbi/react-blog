@@ -95,8 +95,8 @@ nav ul li a:hover{
 }
 
 .active{
-    color: black;
-    background-color: white;
+    /* color: black; */
+    /* background-color: white; */
   text-decoration: underline;
 }
 
