@@ -62,7 +62,7 @@ function App() {
 
     const handleSubmitPost = async (e) => {
         e.preventDefault()
-        const newPost = {id: uuidv4(), title: postTitle, body: postBody, date: "2024-02-11"}
+        const newPost = {id: uuidv4(), title: postTitle, body: postBody, date: new Date()}
         try{
             const response = await api.post('/posts', newPost)
             const allPosts = [...posts, response.data] //use the response from the api -- api set's id etc
