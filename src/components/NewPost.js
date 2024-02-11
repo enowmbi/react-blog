@@ -10,6 +10,7 @@ const NewPost = ({postTitle, setPostTitle, postBody, setPostBody, handleSubmitPo
                 id="post-title" 
                 placeholder="Enter Post Title" 
                 required
+                value={postTitle}
                 onChange={(e) => setPostTitle(e.target.value)}
         />
 
@@ -18,6 +19,7 @@ const NewPost = ({postTitle, setPostTitle, postBody, setPostBody, handleSubmitPo
                 id="post-body" 
                 placeholder="Enter Post Body" 
                 required 
+                value={postBody}
                 onChange={(e) => setPostBody(e.target.value)}
         />
             <button

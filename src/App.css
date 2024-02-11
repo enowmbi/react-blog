@@ -19,7 +19,7 @@ header {
   color: white;
 }
 
-#new-post-form{
+#new-post-form, #edit-post-form{
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -30,22 +30,32 @@ header {
 }
 
 
-#new-post-form input{
+#new-post-form input, #edit-post-form input{
     margin-top: 10px;
     width: 50%;
     height: 4vh;
 }
 
-#new-post-form textarea{
+#new-post-form textarea, #edit-post-form textarea{
     margin-top: 10px;
     width: 50%;
     height: 10vh;
 }
 
-#new-post-form button{
+#new-post-form button, #edit-post-form button{
     height: 4vh;
     margin-top: 20px;
     width: 50%;
+}
+
+#edit-and-delete-post-btns{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#delete-post-btn{
+  margin-left: 40px;
 }
 
 ul{

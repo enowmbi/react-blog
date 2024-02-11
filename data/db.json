@@ -23,6 +23,18 @@
       "title": "Lorem ipsum Dolor Sit Amet Consectetur",
       "body": "Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. Voluptatibus Optio, A Numquam Esse Ipsum Iure",
       "date": "2024-02-11"
+    },
+    {
+      "id": "317d92c8-89fb-4c2b-bb13-77b63c0e1c13",
+      "title": "Attacking Private Networks from the Internet with DNS Rebinding",
+      "body": "A lot of that time is spent running our test suite and static code analysis tools, which can’t be reduced much further. Those pipelines aren’t getting much shorter as it’s not really in our best interest to tell our developers to stop writing new tests. So the savings have to come from somewhere else. Luckily, there’s still a very large portion of time that is spent getting our code ready and onto all the production boxes.",
+      "date": "2024-02-11"
+    },
+    {
+      "id": "4cbb7768-48ce-45d8-a7d1-6dafd5a74805",
+      "title": "Attacking Private Networks from the Internet with DNS Rebinding 2xxxx",
+      "body": "A lot of that time is spent running our test suite and static code analysis tools, which can’t be reduced much further. Those pipelines aren’t getting much shorter as it’s not really in our best interest to tell our developers to stop writing new tests. So the savings have to comexxxxxxx from somewhere else. Luckily, there’s still a very large portion of time that is spent getting our code ready and onto all the production boxes.",
+      "date": "2024-02-11T10:28:08.651Z"
     }
   ]
 }
