@@ -94,6 +94,12 @@ nav ul li a:hover{
     text-decoration: underline;
 }
 
+.active{
+    color: black;
+    background-color: white;
+  text-decoration: underline;
+}
+
 #search{
     width: 100vh;
     height: 4vh;
